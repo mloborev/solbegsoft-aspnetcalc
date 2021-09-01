@@ -1,0 +1,52 @@
+﻿@model AspNetApp.Models.Calculator
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+
+</head>
+
+
+<body>
+    <h2>Calculator</h2>
+    <div class="row">
+        @using (Html.BeginForm("/Index", "Calculator", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label for="Num1">Number 1</label>
+                <input type="text" class="form-control" id="Num1" name="Num1" value="@Model.Num1" />
+            </div>
+
+            <div class="form-group">
+                <label for="Num2">Number 2</label>
+                <input type="text" class="form-control" id="Num2" name="Num2" value="@Model.Num2" />
+            </div>
+
+            <div class="form-group">
+                <label for="Result">Result</label>
+                <input type="text" class="form-control" id="Result" name="Result" value="@Model.Result" />
+            </div>
+
+            <button type="submit" class="btn btn-info" id="Addition" value="Addition" name="Calculate">+</button>
+            <button type="submit" class="btn btn-info" id="Subtraction" value="Subtraction" name="Calculate">-</button>
+            <button type="submit" class="btn btn-info" id="Multiplication" value="Multiplication" name="Calculate">*</button>
+            <button type="submit" class="btn btn-info" id="Division" value="Division" name="Calculate">/</button>
+            <button type="submit" class="btn btn-danger calculate" id="Clear" value="Clear" name="Calculate">C</button>
+        }
+    @if (ViewBag.Error != null)
+            {
+            <script>
+                alert("@ViewBag.Error")
+            </script>
+            }
+    </div>
+    <style>
+        .calculate{
+            margin-left: 100px;
+        }
+    </style>
+</body>
+
+</html>
