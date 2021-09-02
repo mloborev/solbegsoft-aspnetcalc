@@ -37,7 +37,7 @@ namespace AspNetApp.Controllers
                 if (c.Num2 != 0)
                     c.Result = c.Num1 / c.Num2;
                 else
-                    ViewBag.Error = "На ноль делить нельзя";
+                    ViewBag.Error = "You can`t divide by zero";
             }
             else if (calculate == "Clear")
             {
